@@ -75,6 +75,8 @@ public class PetForm extends javax.swing.JFrame {
         txtError = new javax.swing.JLabel();
         cbProprietario = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
+        btHis = new javax.swing.JButton();
+        btVac = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -200,6 +202,20 @@ public class PetForm extends javax.swing.JFrame {
 
         jLabel10.setText("proprietario:");
 
+        btHis.setText("Historico");
+        btHis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHisActionPerformed(evt);
+            }
+        });
+
+        btVac.setText("Vacina");
+        btVac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVacActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -270,6 +286,10 @@ public class PetForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btHis)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btVac)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtError)
                                 .addGap(429, 429, 429))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -313,7 +333,9 @@ public class PetForm extends javax.swing.JFrame {
                     .addComponent(txtvaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btProprietario)
                     .addComponent(btUsuario)
-                    .addComponent(txtError))
+                    .addComponent(txtError)
+                    .addComponent(btHis)
+                    .addComponent(btVac))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -452,10 +474,22 @@ public class PetForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cbProprietarioActionPerformed
 
+    private void btHisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHisActionPerformed
+        this.setVisible(false);
+        new HistoricoForm1().setVisible(true);
+    }//GEN-LAST:event_btHisActionPerformed
+
+    private void btVacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVacActionPerformed
+        this.setVisible(false);
+        new VacinasForm().setVisible(true);
+    }//GEN-LAST:event_btVacActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btHis;
     private javax.swing.JButton btProprietario;
     private javax.swing.JButton btSave;
     private javax.swing.JButton btUsuario;
+    private javax.swing.JButton btVac;
     private javax.swing.JButton btclear;
     private javax.swing.JButton btnListar;
     private javax.swing.JComboBox<String> cbProprietario;

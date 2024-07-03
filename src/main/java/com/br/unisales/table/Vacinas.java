@@ -27,8 +27,8 @@ public class Vacinas {
     private String nome;
     @Column(name = "descricao", nullable = false, length = 500)
     private String descricao;
-    @Column(name = "nome", nullable = false)
-    private Data aplicacao; 
-    @Column(name = "nome", nullable = false)
+    @Column(name = "aplicacao", nullable = false)
+    private Date aplicacao; 
+    @Column(name = "cadastro", nullable = false)
     private Date cadastro;
 }

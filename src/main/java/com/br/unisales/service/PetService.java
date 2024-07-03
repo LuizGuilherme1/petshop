@@ -67,11 +67,11 @@ public class PetService {
             String genero, String especie, String raca, Proprietario proprietario){
         Pet pet = new Pet(id, nome, peso, altura, idade, genero, especie, raca, proprietario);
         this.config.getEntityManager().getTransaction().begin();
-        if (id==null) {
-            this.config.getEntityManager().persist(pet);
-        }else{
-            this.config.getEntityManager().merge(pet);
-        }
+            if (id==null) {
+                this.config.getEntityManager().persist(pet);
+            }else{
+                this.config.getEntityManager().merge(pet);
+            }
         this.config.getEntityManager().getTransaction().commit();
         return pet;
     }

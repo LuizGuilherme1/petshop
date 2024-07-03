@@ -52,6 +52,8 @@ public class UsuarioForm extends javax.swing.JFrame {
         btPet = new javax.swing.JButton();
         btProprietario = new javax.swing.JButton();
         txtError = new javax.swing.JLabel();
+        btHis = new javax.swing.JButton();
+        btVac = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 450));
@@ -135,6 +137,20 @@ public class UsuarioForm extends javax.swing.JFrame {
             }
         });
 
+        btHis.setText("Historico");
+        btHis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHisActionPerformed(evt);
+            }
+        });
+
+        btVac.setText("Vacina");
+        btVac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVacActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,24 +180,29 @@ public class UsuarioForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtvar)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btSave)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btClear, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                        .addComponent(txtId))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btSave)
+                                .addComponent(btPet, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btPet)
+                                .addComponent(btProprietario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btProprietario))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
+                                .addComponent(btHis)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                                    .addComponent(txtId))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btVac)))
+                        .addGap(18, 18, 18)
                         .addComponent(txtError)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -214,7 +235,9 @@ public class UsuarioForm extends javax.swing.JFrame {
                     .addComponent(txtvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btPet)
                     .addComponent(btProprietario)
-                    .addComponent(txtError))
+                    .addComponent(txtError)
+                    .addComponent(btHis)
+                    .addComponent(btVac))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -306,6 +329,16 @@ public class UsuarioForm extends javax.swing.JFrame {
         new ProprietarioForm().setVisible(true);
     }//GEN-LAST:event_btProprietarioActionPerformed
 
+    private void btHisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHisActionPerformed
+        this.setVisible(false);
+        new HistoricoForm1().setVisible(true);
+    }//GEN-LAST:event_btHisActionPerformed
+
+    private void btVacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVacActionPerformed
+        this.setVisible(false);
+        new VacinasForm().setVisible(true);
+    }//GEN-LAST:event_btVacActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,10 +376,12 @@ public class UsuarioForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btClear;
+    private javax.swing.JButton btHis;
     private javax.swing.JButton btListar;
     private javax.swing.JButton btPet;
     private javax.swing.JButton btProprietario;
     private javax.swing.JButton btSave;
+    private javax.swing.JButton btVac;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
